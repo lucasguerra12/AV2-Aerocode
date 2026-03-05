@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import { Eye, EyeOff, Lock, User, PlaneTakeoff } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Login:', username, password)
-  }
+  e.preventDefault()
+  navigate('/dashboard')
+}
 
   return (
     <div className="min-h-screen bg-[#0a0f1e] flex flex-col items-center justify-center px-4">
